@@ -1,0 +1,34 @@
+﻿@model LoginVM
+@{
+    ViewData["Title"] = "SignIn";
+}
+<main id="main" class="main" style="margin-top:150px;">
+    <section id="register">
+        <div class="container mt-5">
+            <h1 class="text-center">Sign in</h1>
+            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+            <div class="register-form" style="display:block; width:50%;margin:0 auto;background-color:chartreuse;padding:30px;box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;margin-bottom:250px;border-radius:30px;">
+                <form method="post" asp-action="SignIn" class="login-form">
+                    <div class="form-group">
+                        <label>Email or username</label>
+                        <input asp-for="EmailOrUsername" type="text" class="form-control">
+                        <span class="text-danger" asp-validation-for="EmailOrUsername"></span>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input asp-for="Password" type="text" class="form-control">
+                        <span class="text-danger" asp-validation-for="Password"></span>
+                    </div>
+                    <div class="register-btn d-flex justify-content-center">
+                        <button type="submit" class="btn btn-primary mt-2">Sign in</button>
+                        
+                    </div>
+
+                    <a asp-action="SignUp" class="btn btn-outline-secondary mx-3 mt-2 ">Go to SignUp</a>
+                   
+                </form>
+            </div>
+
+        </div>
+    </section>
+</main>
